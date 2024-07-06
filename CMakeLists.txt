@@ -30,3 +30,6 @@ target_link_libraries(test_util gtest_main)
 
 # Add a custom target to run the tests
 add_custom_target(run_tests COMMAND test_util DEPENDS test_util)
+
+enable_testing()
+add_test(NAME test_util COMMAND test_util)
