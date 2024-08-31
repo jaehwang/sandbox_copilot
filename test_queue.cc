@@ -19,15 +19,15 @@ protected:
 
 TEST_F(QueueTest, PushAndPop) {
     int x = 1;
-    push(queue, &x);
-    int* result = pop(queue);
+    enqueue(queue, &x);
+    int* result = dequeue(queue);
     ASSERT_NE(result, nullptr);
     EXPECT_EQ(*result, x);
 }
 
 TEST_F(QueueTest, Peek) {
     int x = 1;
-    push(queue, &x);
+    enqueue(queue, &x);
     int* result = peek(queue);
     ASSERT_NE(result, nullptr);
     EXPECT_EQ(*result, x);
@@ -36,9 +36,9 @@ TEST_F(QueueTest, Peek) {
 TEST_F(QueueTest, Empty) {
     EXPECT_TRUE(empty(queue));
     int x = 1;
-    push(queue, &x);
+    enqueue(queue, &x);
     EXPECT_FALSE(empty(queue));
-    pop(queue);
+    dequeue(queue);
     EXPECT_TRUE(empty(queue));
 }
 
