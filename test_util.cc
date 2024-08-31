@@ -4,7 +4,7 @@
 // Test case for parse_args function
 TEST(UtilTest, ParseArgsTest) {
     int argc = 3;
-    char* argv[] = {"program", "-n", "10"};
+    const char* argv[] = {"program", "-n", "10"};
 
     int n = 0;
     int err = parse_args(argc, argv, &n);
@@ -20,7 +20,7 @@ TEST(UtilTest, ParseArgsTest) {
 // Test case for parse_args function with missing argument
 TEST(UtilTest, ParseArgsMissingTest) {
     int argc = 2;
-    char* argv[] = {"program", "-n"};
+    const char* argv[] = {"program", "-n"};
 
     int n = 0;
     int err = parse_args(argc, argv, &n);
@@ -32,7 +32,7 @@ TEST(UtilTest, ParseArgsMissingTest) {
 // Test case for parse_args function with no arguments
 TEST(UtilTest, ParseArgsNoArgsTest) {
     int argc = 1;
-    char* argv[] = {"program"};
+    const char* argv[] = {"program"};
 
     int n = 0;
     int err = parse_args(argc, argv, &n);
@@ -57,9 +57,4 @@ TEST(UtilTest, IsNotPrimeTest) {
 
     // Check if the function correctly identifies the non-prime number
     EXPECT_FALSE(result);
-}
-
-int main(int argc, char** argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
 }

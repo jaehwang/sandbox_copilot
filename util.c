@@ -4,18 +4,16 @@
 #include "util.h"
 
 /**
- * @brief Parses command line arguments and extracts the number.
+ * @brief 명령 줄 인수를 구문 분석하고 숫자를 추출합니다.
  *
- * This function takes the command line arguments, argc and argv, and extracts
- * the number from them. The extracted number is stored in the variable pointed
- * to by the number parameter.
+ * 이 함수는 명령 줄 인수인 argc와 argv를 가져와서 숫자를 추출합니다. 추출된 숫자는 number 매개변수가 가리키는 변수에 저장됩니다.
  *
- * @param argc The number of command line arguments.
- * @param argv An array of strings containing the command line arguments.
- * @param number A pointer to an integer where the extracted number will be stored.
- * @return Returns 0 if the number was successfully extracted, 1 otherwise.
+ * @param argc 명령 줄 인수의 개수입니다.
+ * @param argv 명령 줄 인수를 포함하는 문자열 배열입니다.
+ * @param number 추출된 숫자가 저장될 정수를 가리키는 포인터입니다.
+ * @return 숫자가 성공적으로 추출되면 0을 반환하고, 그렇지 않으면 1을 반환합니다.
  */
-int parse_args(int argc, char *argv[], int *number) {
+int parse_args(int argc, const char *argv[], int *number) {
     if (argc < 2) {
         printf("Usage: %s <arg1> <arg2> ... <argN>\n", argv[0]);
         return 1;
@@ -79,3 +77,4 @@ int count_primes(int start, int end) {
 
     return count;
 }
+

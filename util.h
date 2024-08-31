@@ -3,7 +3,7 @@ extern "C" {
 #endif
 
 // Function declaration
-int parse_args(int argc, char *argv[], int *n);
+int parse_args(int argc, const char *argv[], int *n);
 int count_primes(int n, int m);
 int is_prime(int n);
 
