@@ -4,7 +4,7 @@
 #include <string.h> // Add this line to include the <string.h> header file
 #include "util.h"
 
-int main(int argc, char *argv[]) {
+int main(int argc, const char *argv[]) {
     int res = 0, n = 0, err = 0;
 
     err = parse_args(argc, argv, &n);
