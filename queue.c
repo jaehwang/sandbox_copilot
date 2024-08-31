@@ -47,11 +47,11 @@ Stack* stack_create() {
     return stack;
 }
 
-void push(Queue* queue, int* x) {
+void enqueue(Queue* queue, int* x) {
     stack_push(queue->s1, x);
 }
 
-int* pop(Queue* queue) {
+int* dequeue(Queue* queue) {
     if (stack_empty(queue->s2)) {
         while (!stack_empty(queue->s1)) {
             stack_push(queue->s2, stack_pop(queue->s1));

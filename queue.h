@@ -22,8 +22,8 @@ extern "C" {
     int stack_empty(Stack* stack);
     void stack_destroy(Stack* stack);
     Stack* stack_create();
-    void push(Queue* queue, int* x);
-    int* pop(Queue* queue);
+    void enqueue(Queue* queue, int* x);
+    int* dequeue(Queue* queue);
     int* peek(Queue* queue);
     int empty(Queue* queue);
     Queue* queue_create();
