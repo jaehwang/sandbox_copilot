@@ -32,7 +32,7 @@ static int queue_demo() {
 
     int *x;
     while ((x = dequeue(q)) != NULL) {
-        printf("%d\n",*x);
+        printf("%d\n", count_primes(1, *x));
     }
     queue_destroy(q);
     q = NULL;
