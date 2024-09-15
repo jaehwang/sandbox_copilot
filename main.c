@@ -26,7 +26,9 @@ static int queue_demo() {
 
     int nums[] = {0,1,2};
 
-    for (int i=0; i<sizeof(nums)/sizeof(int); i++) { 
+    int size = sizeof(nums)/sizeof(int);
+
+    for (int i=0; i < size; i++) { 
         enqueue(q, nums+i);
     }
 

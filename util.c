@@ -15,7 +15,7 @@
  */
 int parse_args(int argc, const char *argv[], int *number) {
     if (argc < 2) {
-        printf("Usage: %s <arg1> <arg2> ... <argN>\n", argv[0]);
+        fprintf(stderr, "Usage: %s <arg1> <arg2> ... <argN>\n", argv[0]);
         return 1;
     }
 
@@ -25,7 +25,7 @@ int parse_args(int argc, const char *argv[], int *number) {
                 *number = atoi(argv[i + 1]); // Use dereference operator (*) to assign the value to the pointer
                 break;
             } else {
-                printf("Error: -n option requires a number argument.\n");
+                fprintf(stderr,"Error: -n option requires a number argument.\n");
                 return 1;
             }
         }
