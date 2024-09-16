@@ -22,7 +22,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "CMake: build",
+            "preLaunchTask": "CMake: configure",
             "miDebuggerPath": "/usr/bin/lldb", // lldb 경로
             "logging": {
                 "engineLogging": true
