@@ -19,11 +19,23 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+# Add the include directory
+include_directories(include)
+
 # Add the main executable
-add_executable(sandbox main.c util.c queue.c)
+add_executable(sandbox 
+    src/main.c 
+    src/util.c 
+    src/queue.c
+)
 
 # Add the test executable
-add_executable(test_main test_util.cc test_queue.cc util.c queue.c)
+add_executable(test_main 
+    test/test_util.cc 
+    test/test_queue.cc 
+    src/util.c 
+    src/queue.c
+)
 
 # Link the test executable with Google Test library
 target_link_libraries(test_main gtest_main)
