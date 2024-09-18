@@ -20,7 +20,7 @@ static int queue_demo() {
 
     Queue *q = queue_create();
     if (q == NULL) {
-        fprintf(stderr, "Failed to create queue\n");
+        fprintf(stderr, "Failed to create queue.\n");
         return EXIT_FAILURE;
     }
 
