@@ -1,8 +1,11 @@
 # Set the minimum required CMake version
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.28)
 
 # Set the project name
 project(sandbox)
+
+# Genrate commit_commands.json
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Set the C++ standard to C++11
 set(CMAKE_CXX_STANDARD 11)
