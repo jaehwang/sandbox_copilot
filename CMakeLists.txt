@@ -47,4 +47,4 @@ target_link_libraries(test_main gtest_main)
 add_custom_target(run_tests COMMAND test_main DEPENDS test_main)
 
 enable_testing()
-add_test(NAME test_main COMMAND test_main)
+add_test(NAME test_main COMMAND $<TARGET_FILE:test_main>)
