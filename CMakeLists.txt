@@ -25,26 +25,33 @@ FetchContent_MakeAvailable(googletest)
 # Add the include directory
 include_directories(include)
 
+# Add library
+add_library(tool lib/queue.c lib/util.c)
+
 # Add the main executable
 add_executable(sandbox 
     src/main.c 
-    src/util.c 
-    src/queue.c
 )
 
+target_link_libraries(sandbox tool)
+
 # Add the test executable
-add_executable(test_main 
+add_executable(test_util
     test/test_util.cc 
+)
+
+add_executable(test_queue
     test/test_queue.cc 
-    src/util.c 
-    src/queue.c
 )
 
 # Link the test executable with Google Test library
-target_link_libraries(test_main gtest_main)
+target_link_libraries(test_util gtest_main tool)
+target_link_libraries(test_queue gtest_main tool)
 
 # Add a custom target to run the tests
 add_custom_target(run_tests COMMAND test_main DEPENDS test_main)
 
 enable_testing()
-add_test(NAME test_main COMMAND $<TARGET_FILE:test_main>)
+
+add_test(NAME test_util COMMAND $<TARGET_FILE:test_util>)
+add_test(NAME test_queue COMMAND $<TARGET_FILE:test_queue>)
