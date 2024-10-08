@@ -1,12 +1,7 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-typedef struct _Stack Stack;
-
-typedef struct {
-    Stack *s2;
-    Stack *s1;
-} Queue;
+typedef struct _Queue Queue;
 
 #ifdef __cplusplus
 extern "C" {

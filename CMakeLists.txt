@@ -26,7 +26,7 @@ FetchContent_MakeAvailable(googletest)
 include_directories(include)
 
 # Add library
-add_library(tool lib/queue.c lib/util.c)
+add_library(tool lib/queue.c lib/stack.c lib/util.c)
 
 # Add the main executable
 add_executable(sandbox 
@@ -44,9 +44,14 @@ add_executable(test_queue
     test/test_queue.cc 
 )
 
+add_executable(test_stack
+    test/test_stack.cc 
+)
+
 # Link the test executable with Google Test library
 target_link_libraries(test_util gtest_main tool)
 target_link_libraries(test_queue gtest_main tool)
+target_link_libraries(test_stack gtest_main tool)
 
 # Add a custom target to run the tests
 add_custom_target(run_tests COMMAND test_main DEPENDS test_main)
@@ -55,3 +60,4 @@ enable_testing()
 
 add_test(NAME test_util COMMAND $<TARGET_FILE:test_util>)
 add_test(NAME test_queue COMMAND $<TARGET_FILE:test_queue>)
+add_test(NAME test_stack COMMAND $<TARGET_FILE:test_stack>)

@@ -1,5 +1,3 @@
-#include "queue.h"
-
 // Test cases for queue.c
 #include <gtest/gtest.h>
 #include "queue.h"
