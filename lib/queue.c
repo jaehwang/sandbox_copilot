@@ -3,6 +3,12 @@
 #include <string.h>
 #include "queue.h"
 
+struct _Stack {
+    int* data;
+    int capacity;
+    int top;
+} ;
+
 static void stack_push(Stack* stack, int* x) {
     if (stack->top == stack->capacity) {
         stack->capacity *= 2;
